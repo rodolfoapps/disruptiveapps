@@ -56,6 +56,14 @@ export function Footer() {
                   Contact
                 </a>
               </li>
+              <li>
+                <Link
+                  href="/support"
+                  className="text-sm text-gray-500 hover:text-gray-300 transition"
+                >
+                  Support
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
