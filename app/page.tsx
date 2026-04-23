@@ -1,65 +1,133 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const categories = [
+  {
+    title: "Chrome Extensions",
+    desc: "Browser tools that automate tedious tasks and extract valuable data from the web.",
+    href: "/extensions",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Web Applications",
+    desc: "Full-stack web apps built with modern frameworks, optimized for performance and scale.",
+    href: "/solutions",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Data & Automation",
+    desc: "Scrapers, pipelines, and automation tools that turn manual work into one-click workflows.",
+    href: "/solutions",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    ),
+  },
+  {
+    title: "SEO & Marketing Tools",
+    desc: "Software that helps businesses rank higher, convert more, and understand their market.",
+    href: "/solutions",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-transparent" />
+        <div className="max-w-6xl mx-auto px-6 pt-24 pb-20 relative">
+          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-4">
+            Disruptive Apps
           </p>
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-3xl">
+            Software that solves problems{" "}
+            <span className="text-cyan-400">others ignore.</span>
+          </h1>
+          <p className="text-lg text-gray-400 mt-6 max-w-2xl leading-relaxed">
+            We build Chrome extensions, web applications, and automation tools
+            that turn complex workflows into one-click solutions. Clean code,
+            fast delivery, real results.
+          </p>
+          <div className="flex gap-4 mt-8">
+            <Link
+              href="/extensions"
+              className="bg-cyan-500 hover:bg-cyan-400 text-[#0a0a0f] font-semibold px-6 py-3 rounded-lg transition text-sm"
+            >
+              Browse Extensions
+            </Link>
+            <Link
+              href="/solutions"
+              className="border border-white/20 hover:border-white/40 text-white font-semibold px-6 py-3 rounded-lg transition text-sm"
+            >
+              Our Solutions
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* Featured Product */}
+      <section className="max-w-6xl mx-auto px-6 pb-20">
+        <div className="bg-gradient-to-r from-[#16213e] to-[#1a1a2e] border border-white/10 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+          <div className="w-20 h-20 bg-[#1a1a2e] rounded-2xl flex items-center justify-center text-4xl border border-white/10 flex-shrink-0">
+            &#9733;
+          </div>
+          <div className="flex-1">
+            <span className="text-xs font-bold text-cyan-400 tracking-widest uppercase">
+              Featured Extension
+            </span>
+            <h2 className="text-2xl font-bold text-white mt-1">
+              Google Reviews Extractor
+            </h2>
+            <p className="text-gray-400 mt-2">
+              Download every Google Maps review into a clean CSV file — names,
+              ratings, dates, and full review text. No API needed.
+            </p>
+          </div>
+          <Link
+            href="/extensions/google-reviews-extractor"
+            className="bg-cyan-500 hover:bg-cyan-400 text-[#0a0a0f] font-semibold px-6 py-3 rounded-lg transition text-sm whitespace-nowrap"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Learn More
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Categories */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <h2 className="text-2xl font-bold text-white mb-2">What We Build</h2>
+        <p className="text-gray-500 mb-10">
+          Tools and software across four categories.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {categories.map((cat) => (
+            <Link
+              key={cat.title}
+              href={cat.href}
+              className="group bg-white/[0.02] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 hover:bg-white/[0.04] transition"
+            >
+              <div className="text-cyan-400 mb-4">{cat.icon}</div>
+              <h3 className="text-lg font-semibold text-white group-hover:text-cyan-400 transition">
+                {cat.title}
+              </h3>
+              <p className="text-sm text-gray-500 mt-2">{cat.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
